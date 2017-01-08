@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tweeter-In-Chief</title>
+
+
+    <link rel="stylesheet" href="{% static "talk_app/css/bootstrap.css" %}" media="screen" title="bootstrap" charset="utf-8">
+    <link rel="stylesheet" href="{% static "talk_app/css/main.css" %}">
+    {# <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Lora|Noto+Sans" rel="stylesheet" type="text/css">#}
+
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+
+        <img class="small" src="/static/chief_app/images/trump1_campaign.jpg" />
+            <a class="btn btn-primary btn-sm " href=#>My Trump Favorites</a>
+            <a class="btn btn-primary btn-sm " href=#>My Trump Explanations</a>
+
+
+      </div>
+    </nav>
+    <div class="container">
+
+      {% block content %}
+        No content provided
+      {% endblock %}
+    </div>
+    <h3 class="padding"><br>&nbsp;</h3>
+    <h5>&copy;2016. Built by Hope E. Paasch, www.hepaasch.com</h5>
+
+  </body>
+</html>

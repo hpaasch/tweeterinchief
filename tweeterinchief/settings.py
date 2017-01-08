@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,7 @@ SECRET_KEY = 'w--emi($g18-2_x&b7rljyy7!mmf2_yle*15e8he0h99g+ia%1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chief_app',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +83,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# added next two lines for Heroku postgres, paired with import above
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -118,4 +124,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+# FROM HERE storage on AWS
+# get all the secret stuff from hidden file
+aws_bucket_name = os.environ.get('aws_bucket_name')
+
+AWS_STORAGE_BUCKET_NAME = aws_bucket_name
+AWS_ACCESS_KEY_ID = os.getenv('aws_key')
+AWS_SECRET_ACCESS_KEY = os.getenv('aws_secret')
+
+AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(aws_bucket_name)
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_URL = '/static/'
+
+if aws_bucket_name:
+    AWS_S3_FILE_OVERWRITE = False
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATIC_ROOT = BASE_DIR + "/static"
+STATICFILES_LOCATION = 'static'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR

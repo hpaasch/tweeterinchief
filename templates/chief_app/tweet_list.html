@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header">
+    <h1>Tweeter-In-Chief<small>  Stay up with the president's statements.</small></h1>
+  </div>
+</div>
+
+<h1> Top 20 Most Popular Tweets</h1>
+<h4> Updates every time you visit, so keep checking back!</h4>
+<h5> ('Most Popular' = Retweets and Favorites combined)</h5>
+
+  {% autoescape off %}
+    {% for tweet in popular_tweets %}
+    <h1>{{ forloop.counter }}.</h1> {{ tweet }}
+    {% endfor %}
+  {% endautoescape %}
+
+
+
+{% endblock %}

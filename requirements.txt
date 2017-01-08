@@ -1,0 +1,13 @@
+django
+djangorestframework
+Pillow
+requests
+beautifulsoup4
+dj-database-url
+psycopg2
+gunicorn
+TwitterAPI
+whitenoise
+pytz
+django-storages
+boto
