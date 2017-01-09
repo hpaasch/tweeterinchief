@@ -7,18 +7,17 @@
     <title>Tweeter-In-Chief</title>
 
 
-    <link rel="stylesheet" href="{% static "talk_app/css/bootstrap.css" %}" media="screen" title="bootstrap" charset="utf-8">
-    <link rel="stylesheet" href="{% static "talk_app/css/main.css" %}">
-    {# <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Lora|Noto+Sans" rel="stylesheet" type="text/css">#}
+    <link rel="stylesheet" href="{% static "chief_app/css/bootstrap.css" %}" media="screen" title="bootstrap" charset="utf-8">
+    <link rel="stylesheet" href="{% static "chief_app/css/main.css" %}">
 
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container-fluid">
+      <div class="container">
 
         <img class="small" src="/static/chief_app/images/trump1_campaign.jpg" />
-            <a class="btn btn-primary btn-sm " href=#>My Trump Favorites</a>
-            <a class="btn btn-primary btn-sm " href=#>My Trump Explanations</a>
+            <a class="btn btn-primary" href=#>My Trump Favorites</a>
+            <a class="btn btn-primary" href=#>My Trump Explanations</a>
 
 
       </div>
@@ -28,9 +27,8 @@
       {% block content %}
         No content provided
       {% endblock %}
+      <br>
+      <h5>&copy;2016. Built by Hope E. Paasch, <a href="http://www.hepaasch.com">www.hepaasch.com</a></h5>
     </div>
-    <h3 class="padding"><br>&nbsp;</h3>
-    <h5>&copy;2016. Built by Hope E. Paasch, www.hepaasch.com</h5>
-
   </body>
 </html>
