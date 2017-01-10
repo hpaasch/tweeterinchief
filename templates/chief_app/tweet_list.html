@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-md-6">
       <p>This is a nonpartisan constantly updating list of the Top 20 Most Popular tweets from President-elect Donald Trump.
-      This list counts tweets made on or after Jan. 10, 2017. The "most
+      This list counts tweets made on or after Jan. 7, 2017. The "most
       popular" calculation is a simple one, adding together "retweets" and "likes." My own
       theory is that "likes" most often show support, while "retweets" simply
       represent sharing the tweet with others and cannot be interpreted as approval or
@@ -25,10 +25,33 @@
           {% endfor %}
         {% endautoescape %}
     </div>
-    <div class="col-md-3">
-      <h4>Like this? Help make it happen</h4>
-      <p>Support this effort by contributing $5. Now taking suggestions for what else
-      this page should do. Click here to submit an idea.</p>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Like this? Help make it happen</h4>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="K45GP3UNSDSGG">
+            <table>
+            <tr><td><input type="hidden" name="on0" value="Support future development">Support future development</td></tr><tr><td><select name="os0">
+            	<option value="Give a little:">Give a little: $5.00 USD</option>
+            	<option value="Give a little more:">Give a little more: $10.00 USD</option>
+            	<option value="Give a lot:">Give a lot: $20.00 USD</option>
+            </select> </td></tr>
+            </table>
+            <br>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+            <br>
+            <p>Whether you donate or not, do you have an idea for what else
+          this page should do? Be nice. <a href="mailto:hepwebworks@gmail.com">Click here</a> to submit an idea.</p>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
