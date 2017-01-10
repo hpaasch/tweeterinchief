@@ -2,19 +2,21 @@
 {% load staticfiles %}
 
 {% block content %}
-<div class="container">
   <div class="page-header">
-    <h1>Tweeter-In-Chief<small>  Stay up with the president's statements</small></h1>
+    <h1>Tweeter-In-Chief.US <small>Stay up with the president's statements</small></h1>
   </div>
-</div>
 
 
-<p>These are the Top 20 Most Popular tweets from President Donald Trump.
-This list begins with tweets made on Inauguration Day, Jan. 20, 2017. The "most
-popular" calculation is a simple one, adding together "retweets" and "likes". The
-list updates each time you return to it, so check back often!
+
+<p>This is a nonpartisan constantly updating list of the Top 20 Most Popular tweets from President-elect Donald Trump.
+This list counts tweets made on or after Jan. 10, 2017. The "most
+popular" calculation is a simple one, adding together "retweets" and "likes." The
+list updates each time you return, so check back often!
 </p>
-
+<p>If you have a Twitter account, you can retweet or like the ones shown here.</p>
+<p>My own theory is that "likes" most often show support, while "retweets" simply
+represent sharing the tweet with others and cannot be interpreted as approval or
+disapproval.</p>
 
   {% autoescape off %}
     {% for tweet in popular_tweets %}
