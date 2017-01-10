@@ -27,7 +27,7 @@ SECRET_KEY = 'w--emi($g18-2_x&b7rljyy7!mmf2_yle*15e8he0h99g+ia%1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'tweeter-in-chief.herokuapp.com', 'tweeter-in-chief.us']
+ALLOWED_HOSTS = ['127.0.0.1', 'tweeter-in-chief.herokuapp.com', 'www.tweeter-in-chief.us']
 
 
 # Application definition
