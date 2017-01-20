@@ -10,17 +10,18 @@
   <div class="row">
     <div class="col-md-6">
       <p>This is a nonpartisan constantly updating list of the Top 20 Most Popular tweets from President Donald Trump.
-      This list counts tweets made on or after Jan. 7, 2017. The "most
-      popular" calculation is a simple one, adding together "retweets" and "likes." My own
+      The "most popular" calculation is a simple one, adding together "retweets" and "likes." My own
       theory is that "likes" most often show support, while "retweets" simply
       represent sharing the tweet with others and cannot be interpreted as approval or
       disapproval.
       </p>
-      <p>If you have a Twitter account, you can retweet or like the ones shown here.</p>
-      <p>The list updates each time you return, so check back often!</p>
+      <p>The first list is the @POTUS account Trump took over on Jan. 20, 2017.
+        The second list is Trump's longstanding @realDonaldTrump account, but looking only at tweets made
+        as of January 2017. Both lists update each time you return, so check back often!</p>
 
+      <h3>@POTUS</h3>
         {% autoescape off %}
-          {% for tweet in popular_tweets %}
+          {% for tweet in POTUS_tweets %}
           <h1>{{ forloop.counter }}.</h1> {{ tweet }}
           {% endfor %}
         {% endautoescape %}
@@ -51,6 +52,13 @@
         </div>
 
       </div>
+      <h3>@realDonaldTrump</h3>
+        {% autoescape off %}
+          {% for tweet in realDonaldTrump_tweets %}
+          <h1>{{ forloop.counter }}.</h1> {{ tweet }}
+          {% endfor %}
+        {% endautoescape %}
+
 
     </div>
 
