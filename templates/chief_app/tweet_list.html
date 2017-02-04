@@ -8,25 +8,25 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
       <p>This is a nonpartisan constantly updating list of the Top 20 Most Popular tweets from President Donald Trump.
       The "most popular" calculation is a simple one, adding together "retweets" and "likes." My own
       theory is that "likes" most often show support, while "retweets" simply
       represent sharing the tweet with others and cannot be interpreted as approval or
       disapproval.
       </p>
-      <p>The first list is the @POTUS account Trump took over on Jan. 20, 2017.
+      <p>UPDATE THIS The first list is the @POTUS account Trump took over on Jan. 20, 2017.
         The second list is Trump's longstanding @realDonaldTrump account, but looking only at tweets made
         as of January 2017. Both lists update each time you return, so check back often!</p>
 
       <h3>@POTUS</h3>
         {% autoescape off %}
-          {% for tweet in POTUS_tweets %}
+          {% for tweet in recent_rdt_tweets %}
           <h1>{{ forloop.counter }}.</h1> {{ tweet }}
           {% endfor %}
         {% endautoescape %}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="panel panel-default">
         <div class="panel-body">
           <h4>Like this? Help make it happen</h4>
@@ -55,13 +55,36 @@
       <h3>@realDonaldTrump</h3>
         {% autoescape off %}
           {% for tweet in realDonaldTrump_tweets %}
+          <hr>
           <h1>{{ forloop.counter }}.</h1> {{ tweet }}
           {% endfor %}
         {% endautoescape %}
 
 
     </div>
+    <div class="col-md-3">
+      <h2>Top 20 for 2017</h2>
+      <h3>@realDonaldTrump</h3>
+        {% autoescape off %}
+          {% for tweet in realDonaldTrump_tweets %}
+          <hr>
+          <h1>{{ forloop.counter }}.</h1> {{ tweet }}
+          {% endfor %}
+        {% endautoescape %}
 
+    </div>
+    <div class="col-md-3">
+      <h2>Top 20 for 2017</h2>
+      <h3>@POTUS</h3>
+      <p>Note: @POTUS retweets of @realDonaldTrump are ranked on popularity of the @POTUS retweet</p>
+        {% autoescape off %}
+          {% for tweet in POTUS_tweets %}
+          <hr>
+          <h1>{{ forloop.counter }}.</h1> {{ tweet }}
+          {% endfor %}
+        {% endautoescape %}
+
+    </div>
   </div>
 
 </div>

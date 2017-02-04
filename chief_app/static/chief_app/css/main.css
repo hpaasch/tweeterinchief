@@ -1,3 +1,41 @@
+/* sticky footer starts */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 3em; /* same as footer height */
+}
+
+#footer {
+  position: relative;
+  margin-top: -3em; /* negative value of footer height */
+  height: 3em;
+  clear: both;
+  background-color: #efefef;
+  padding-top: 1em;
+  text-align: center;
+}
+
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+}
+/* sticky footer ends */
 
 .label {
   font-size: 3em;

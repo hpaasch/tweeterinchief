@@ -6,6 +6,7 @@ class Tweet(models.Model):
     username = models.CharField(max_length=50)
     created = models.DateTimeField(auto_now_add=True)
     created_at = models.TextField()
+    adjusted_time = models.DateTimeField(null=True, blank=True)
     text = models.TextField()
     retweet_count = models.IntegerField(null=True)
     favorite_count = models.IntegerField(null=True)

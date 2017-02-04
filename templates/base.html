@@ -16,21 +16,24 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-static-top">
+    <div id="wrap">
+      <div id="main">
+        <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
-
             <img class="small" src="/static/chief_app/images/trump1_campaign.jpg" />
                 <p class="label" href=#>Tweeter-In-Chief.US</p>
-
           </div>
-    </nav>
-    <div class="container">
-
-      {% block content %}
-        No content provided
-      {% endblock %}
-      <br>
-      <h5>&copy;2016. Built by Hope E. Paasch, <a href="http://www.hepaasch.com">www.hepaasch.com</a></h5>
+        </nav>
+        <div class="container">
+          {% block content %}
+            No content provided
+          {% endblock %}
+      </div>
     </div>
+  </div>
+  <div id="footer">
+    &copy;2016-17. Built by Hope E. Paasch, <a href="http://www.hepaasch.com">www.hepaasch.com</a>
+  </div>
+
   </body>
 </html>
