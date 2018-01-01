@@ -97,7 +97,7 @@ def popular_tweets_2017(tweeter):
 
 def recent_tweets(tweeter):
     recent = []
-    recent = Tweet.objects.filter(username=tweeter).order_by('-adjusted_time')[:5]
+    recent = Tweet.objects.filter(username=tweeter).order_by('-created_at')[:5]
 
     tweet_ids = []  # collecting the IDs to feed into the twitter api
     for tweet in recent:
