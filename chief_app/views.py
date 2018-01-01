@@ -82,7 +82,8 @@ def current_year_popular_tweets(tweeter):
 
 def popular_tweets_2017(tweeter):
     popular = []
-    popular = Tweet.objects.filter(username=tweeter).filter(adjusted_time__range=["2017-01-01", "2017-12-31"]).order_by('-popular')[:25]
+    # TODO: add filter for only 2017 dates. remember: adjusted_time did not exist before Jan. 1, 2018
+    popular = Tweet.objects.filter(username=tweeter).order_by('-popular')[:25]
 
     tweet_ids = []  # collecting the IDs to feed into the twitter api
     for tweet in popular:
