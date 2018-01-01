@@ -116,17 +116,17 @@ class TrumpTweetListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        realDonaldTrump_tweets = popular_tweets('realDonaldTrump')
-        POTUS_tweets = popular_tweets('POTUS')
-        recent_rdt_tweets = recent_tweets('realDonaldTrump')
-        recent_potus_tweets = recent_tweets('POTUS')
         current_year_rdt_tweets = current_year_popular_tweets('realDonaldTrump')
+        # realDonaldTrump_tweets = popular_tweets('realDonaldTrump')
+        # POTUS_tweets = popular_tweets('POTUS')
+        recent_rdt_tweets = recent_tweets('realDonaldTrump')
+        # recent_potus_tweets = recent_tweets('POTUS')
 
         context = {
-            'recent_potus_tweets': recent_potus_tweets,
+            # 'recent_potus_tweets': recent_potus_tweets,
             'recent_rdt_tweets': recent_rdt_tweets,
-            'realDonaldTrump_tweets': realDonaldTrump_tweets,
-            'POTUS_tweets': POTUS_tweets,
+            # 'realDonaldTrump_tweets': realDonaldTrump_tweets,
+            # 'POTUS_tweets': POTUS_tweets,
             'current_year_rdt_tweets': current_year_rdt_tweets,
             }
         return context
