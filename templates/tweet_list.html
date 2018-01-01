@@ -18,7 +18,7 @@
       <p>For a recap of his most popular tweets from 2017, <a href={% url '2017_view' %}>click here</a>.
         <hr>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <h2>Top 2018 tweets (so far!)</h2>
 
         {% autoescape off %}
@@ -55,18 +55,19 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <h2>Most recent 5 tweets</h2>
-        {% autoescape off %}
-          {% for tweet in recent_rdt_tweets %}
-            <hr>
-            <h1>{{ forloop.counter }}.</h1> {{ tweet }}
-          {% endfor %}
-        {% endautoescape %}
 
-    </div>
 
   </div>
 </div>
 
 {% endblock %}
+<div class="col-md-4">
+  <h2>Most recent 5 tweets</h2>
+    {% autoescape off %}
+      {% for tweet in recent_rdt_tweets %}
+        <hr>
+        <h1>{{ forloop.counter }}.</h1> {{ tweet }}
+      {% endfor %}
+    {% endautoescape %}
+
+</div>
