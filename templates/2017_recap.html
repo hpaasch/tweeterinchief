@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+
+<div class="page-header">
+  <h1>Top 25 presidential tweets for 2017</h1>
+</div>
+
+    <div class="col-md-10">
+      <p>This is a nonpartisan list of the tweets from President Donald Trump that got the highest engagement during 2017.
+      The ranking is a simple one, adding together "retweets" and "likes." My own
+      theory is that "likes" most often show support, while "retweets" simply
+      represent sharing the tweet with others and cannot be interpreted as approval or
+      disapproval.</p>
+      <p>While Trump took over the @POTUS account on Jan. 20, 2017, he primarily uses his longstanding personal account, @realDonaldTrump.
+        (To see his @POTUS tweets, <a href="https://twitter.com/POTUS">click here</a>.) </p>
+      <p>To see the current list of his most popular tweets from 2018, <a href={% url 'index_view' %}>click here</a>.
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        {% autoescape off %}
+          {% for tweet in year_one_rdt_tweets %}
+            <h1>{{ forloop.counter }}. </h1> {{ tweet }}
+          {% endfor %}
+        {% endautoescape %}
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>Support tweeter-in-chief.us</h4>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="K45GP3UNSDSGG">
+              <table>
+              <tr><td><input type="hidden" name="on0" value="Support future development">Contribute to help pay the bills!</td></tr><tr><td><select name="os0">
+              	<option value="Give a little:">Give a little: $5.00 USD</option>
+              	<option value="Give a little more:">Give a little more: $10.00 USD</option>
+              	<option value="Give a lot:">Give a lot: $20.00 USD</option>
+              </select> </td></tr>
+              </table>
+              <br>
+              <input type="hidden" name="currency_code" value="USD">
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+              </form>
+
+              <br>
+              <p>Whether you send money or not, do you have an idea for what else
+            this page should do? Be nice. <a href="mailto:hepwebworks@gmail.com">Click here</a> to submit an idea.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}

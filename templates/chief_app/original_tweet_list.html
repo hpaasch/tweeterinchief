@@ -19,9 +19,9 @@
         The second list is Trump's longstanding @realDonaldTrump account, but looking only at tweets made
         as of January 2017. Both lists update each time you return, so check back often!</p>
 
-      <h3>@POTUS</h3>
+      <h3>@POTUS (10 most recent)</h3>
         {% autoescape off %}
-          {% for tweet in recent_rdt_tweets %}
+          {% for tweet in recent_potus_tweets %}
           <h1>{{ forloop.counter }}.</h1> {{ tweet }}
           {% endfor %}
         {% endautoescape %}
@@ -52,9 +52,9 @@
         </div>
 
       </div>
-      <h3>@realDonaldTrump</h3>
+      <h3>@realDonaldTrump (10 most recent)</h3>
         {% autoescape off %}
-          {% for tweet in realDonaldTrump_tweets %}
+          {% for tweet in recent_rdt_tweets %}
           <hr>
           <h1>{{ forloop.counter }}.</h1> {{ tweet }}
           {% endfor %}
